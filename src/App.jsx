@@ -5,11 +5,13 @@ import {
   Route,
   Routes,
 } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import logo from './planet.png';
 import './App.css';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import Profile from './components/Profile';
+import store from './redux/reduxConfig';
 
 function App() {
   const rocketsLinkRef = useRef(null);
@@ -32,32 +34,34 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
-      <header>
-        <div className="left-section">
-          <img src={logo} alt="logo" className="logo" />
-          <h2>Space Travelers&rsquo; Hub</h2>
-        </div>
-        <nav>
-          <ul>
-            <li className="active" ref={rocketsLinkRef}>
-              <Link to="/" onClick={navigate}>Rockets</Link>
-            </li>
-            <li ref={missionsLinkRef}>
-              <Link to="/missions" onClick={navigate}>Missions</Link>
-            </li>
-            <li ref={profileLinkRef}>
-              <Link to="/profile" onClick={navigate}>My Profile</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      <Routes>
-        <Route path="/" element={<Rockets />} />
-        <Route path="missions" element={<Missions />} />
-        <Route path="profile" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <header>
+          <div className="left-section">
+            <img src={logo} alt="logo" className="logo" />
+            <h2>Space Travelers&rsquo; Hub</h2>
+          </div>
+          <nav>
+            <ul>
+              <li className="active" ref={rocketsLinkRef}>
+                <Link to="/" onClick={navigate}>Rockets</Link>
+              </li>
+              <li ref={missionsLinkRef}>
+                <Link to="/missions" onClick={navigate}>Missions</Link>
+              </li>
+              <li ref={profileLinkRef}>
+                <Link to="/profile" onClick={navigate}>My Profile</Link>
+              </li>
+            </ul>
+          </nav>
+        </header>
+        <Routes>
+          <Route path="/" element={<Rockets />} />
+          <Route path="missions" element={<Missions />} />
+          <Route path="profile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
 
