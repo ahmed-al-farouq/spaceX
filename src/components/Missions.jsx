@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions, joinMission } from '../redux/missions/missions';
+import { fetchMissions, joinMission, leaveMission } from '../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -17,6 +17,7 @@ const Missions = () => {
   }, []);
 
   const handleJoin = (id) => dispatch(joinMission(id));
+  const handleLeave = (id) => dispatch(leaveMission(id));
 
   return (
     <Container>
@@ -45,6 +46,7 @@ const Missions = () => {
                   <Button
                     size="sm"
                     variant="outline-danger"
+                    onClick={() => handleLeave(id)}
                   >
                     Leave Mission
                   </Button>
