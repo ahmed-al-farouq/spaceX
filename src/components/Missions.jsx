@@ -4,7 +4,7 @@ import Table from 'react-bootstrap/Table';
 import Badge from 'react-bootstrap/Badge';
 import Button from 'react-bootstrap/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions } from '../redux/missions/missions';
+import { fetchMissions, joinMission } from '../redux/missions/missions';
 
 const Missions = () => {
   const dispatch = useDispatch();
@@ -15,6 +15,8 @@ const Missions = () => {
       dispatch(fetchMissions);
     }
   }, []);
+
+  const handleJoin = (id) => dispatch(joinMission(id));
 
   return (
     <Container>
@@ -35,8 +37,7 @@ const Missions = () => {
               <td><p className="fw-bold">{name}</p></td>
               <td><p>{description}</p></td>
               <td className="align-middle">
-                {reserved && <Badge bg="info">Active Member</Badge>}
-                {!reserved && <Badge bg="secondary">NOT A MEMBER</Badge>}
+                <Badge bg="secondary">NOT A MEMBER</Badge>
               </td>
               <td className="col-2 align-middle text-center">
                 {reserved
@@ -53,6 +54,7 @@ const Missions = () => {
                   <Button
                     size="sm"
                     variant="outline-secondary"
+                    onClick={() => handleJoin(id)}
                   >
                     Join Mission
                   </Button>
