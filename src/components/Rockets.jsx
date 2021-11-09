@@ -11,7 +11,7 @@ function Rockets() {
         <Rocket
           key={rocket.id}
           name={rocket.name}
-          description="description"
+          description={rocket.desc}
           image={rocket.img[0]}
         />,
       );

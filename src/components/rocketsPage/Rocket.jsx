@@ -5,11 +5,13 @@ function Rocket({ name, description, image }) {
   return (
     <div className="rocket">
       <img src={image} alt={name} />
-      <h2>{name}</h2>
-      <p>{description}</p>
-      <button type="button">
-        Reserve Rocket
-      </button>
+      <div className="content">
+        <h2>{name}</h2>
+        <p>{description}</p>
+        <button type="button">
+          Reserve Rocket
+        </button>
+      </div>
     </div>
   );
 }
