@@ -24,13 +24,13 @@ function App() {
           <nav>
             <ul>
               <li>
-                <NavLink to="/" activeClassName="active">Rockets</NavLink>
+                <NavLink to="/" activeclassname="active">Rockets</NavLink>
               </li>
               <li>
-                <NavLink to="/missions" activeClassName="active">Missions</NavLink>
+                <NavLink to="/missions" activeclassname="active">Missions</NavLink>
               </li>
               <li>
-                <NavLink to="/profile" activeClassName="active">My Profile</NavLink>
+                <NavLink to="/profile" activeclassname="active">My Profile</NavLink>
               </li>
             </ul>
           </nav>
