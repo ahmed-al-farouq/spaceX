@@ -13,6 +13,7 @@ function Rockets() {
           name={rocket.name}
           description={rocket.desc}
           image={rocket.img[0]}
+          id={rocket.id}
         />,
       );
     });
