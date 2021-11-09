@@ -1,10 +1,29 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import Rocket from './rocketsPage/Rocket';
 
 function Rockets() {
+  const rockets = useSelector((state) => state.rocketsRudcer.rockets);
+  const rokcetsList = [];
+  const displayRockets = () => {
+    rockets.forEach((rocket) => {
+      rokcetsList.push(
+        <Rocket
+          key={rocket.id}
+          name={rocket.name}
+          description="description"
+          image={rocket.img[0]}
+        />,
+      );
+    });
+  };
+  displayRockets();
   return (
-    <div>
-      Rockets
-    </div>
+    <section className="rockets">
+      {
+        rokcetsList
+      }
+    </section>
   );
 }
 
