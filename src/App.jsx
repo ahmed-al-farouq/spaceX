@@ -10,6 +10,7 @@ import './App.css';
 import Rockets from './components/Rockets';
 import Missions from './components/Missions';
 import Profile from './components/Profile';
+import store from './redux/reduxConfig';
 
 function App() {
   return (
