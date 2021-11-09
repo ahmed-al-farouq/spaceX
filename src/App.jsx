@@ -1,11 +1,10 @@
-import { useRef } from 'react';
+import { Provider } from 'react-redux';
 import {
   BrowserRouter,
-  Link,
+  NavLink,
   Route,
   Routes,
 } from 'react-router-dom';
-import { Provider } from 'react-redux';
 import logo from './planet.png';
 import './App.css';
 import Rockets from './components/Rockets';
@@ -14,25 +13,6 @@ import Profile from './components/Profile';
 import store from './redux/reduxConfig';
 
 function App() {
-  const rocketsLinkRef = useRef(null);
-  const missionsLinkRef = useRef(null);
-  const profileLinkRef = useRef(null);
-  const navigate = (e) => {
-    if (e.target.textContent === 'Rockets') {
-      rocketsLinkRef.current.classList.add('active');
-      missionsLinkRef.current.classList.remove('active');
-      profileLinkRef.current.classList.remove('active');
-    } else if (e.target.textContent === 'Missions') {
-      rocketsLinkRef.current.classList.remove('active');
-      missionsLinkRef.current.classList.add('active');
-      profileLinkRef.current.classList.remove('active');
-    } else {
-      rocketsLinkRef.current.classList.remove('active');
-      missionsLinkRef.current.classList.remove('active');
-      profileLinkRef.current.classList.add('active');
-    }
-  };
-
   return (
     <Provider store={store}>
       <BrowserRouter>
@@ -43,14 +23,14 @@ function App() {
           </div>
           <nav>
             <ul>
-              <li className="active" ref={rocketsLinkRef}>
-                <Link to="/" onClick={navigate}>Rockets</Link>
+              <li>
+                <NavLink to="/" activeclassname="active">Rockets</NavLink>
               </li>
-              <li ref={missionsLinkRef}>
-                <Link to="/missions" onClick={navigate}>Missions</Link>
+              <li>
+                <NavLink to="/missions" activeclassname="active">Missions</NavLink>
               </li>
-              <li ref={profileLinkRef}>
-                <Link to="/profile" onClick={navigate}>My Profile</Link>
+              <li>
+                <NavLink to="/profile" activeclassname="active">My Profile</NavLink>
               </li>
             </ul>
           </nav>

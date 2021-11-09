@@ -28,6 +28,7 @@ const getRockets = () => async (dispatch) => {
           name: rocket.rocket_name,
           type: rocket.rocket_type,
           img: rocket.flickr_images,
+          desc: rocket.description,
         });
       });
       dispatch(fetchingDataSucceed(selectedData));
