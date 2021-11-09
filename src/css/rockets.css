@@ -45,3 +45,26 @@
   font-size: 18px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 991px) {
+  .rockets .rocket {
+    justify-content: flex-start;
+  }
+
+  .rockets .rocket .content {
+    margin-left: 0;
+    margin-top: 10px;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .rockets .rocket {
+    justify-content: center;
+  }
+
+  .rockets .rocket .content {
+    align-items: center;
+    text-align: center;
+  }
+}
