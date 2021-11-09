@@ -13,6 +13,10 @@ function Rockets() {
           name={rocket.name}
           description={rocket.desc}
           image={rocket.img[0]}
+          reserved={
+            rocket.reserved !== undefined
+              ? rocket.reserved : false
+          }
           id={rocket.id}
         />,
       );

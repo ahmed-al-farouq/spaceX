@@ -1,14 +1,17 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { bookRocket } from '../../redux/rockets/rockets';
+import { bookRocket, cancelRokcet } from '../../redux/rockets/rockets';
 
 function Rocket({
-  name, description, image, id,
+  name, description, image, reserved, id,
 }) {
   const dispatch = useDispatch();
   const booking = (id) => {
     dispatch(bookRocket(id));
+  };
+  const cancelBooking = (id) => {
+    dispatch(cancelRokcet(id));
   };
   return (
     <div className="rocket">
@@ -16,11 +19,30 @@ function Rocket({
       <div className="content">
         <h2>{name}</h2>
         <p>
+          {
+          reserved
+            ? (
+              <span className="reserved">
+                Reserved
+              </span>
+            )
+            : ''
+          }
           {description}
         </p>
-        <button type="button" onClick={() => booking(id)}>
-          Reserve Rocket
-        </button>
+        {
+          reserved
+            ? (
+              <button type="button" className="cancel-reservation" onClick={() => cancelBooking(id)}>
+                Cancel Reservation
+              </button>
+            )
+            : (
+              <button type="button" onClick={() => booking(id)}>
+                Reserve Rocket
+              </button>
+            )
+        }
       </div>
     </div>
   );
@@ -30,6 +52,7 @@ Rocket.propTypes = {
   name: propTypes.string.isRequired,
   description: propTypes.string.isRequired,
   image: propTypes.string.isRequired,
+  reserved: propTypes.bool.isRequired,
   id: propTypes.number.isRequired,
 };
 export default Rocket;

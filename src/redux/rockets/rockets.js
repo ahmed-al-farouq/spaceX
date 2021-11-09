@@ -1,9 +1,9 @@
-/* eslint-disable no-unused-expressions */
 /* eslint-disable no-case-declarations */
 const START_FETCHING_DATA = 'START_FETCHING_DATA';
 const FETCH_DATA_SUCCESS = 'FETCH_DATA_SUCCESS';
 const FETCH_DATA_FAILD = 'FETCH_DATA_SUCCESS';
 const ROCKET_BOOKED = 'ROCKET_BOOKED';
+const CANCEL_BOOKED = 'CANCEL_BOOKED';
 
 const initState = {
   rockets: [],
@@ -27,6 +27,11 @@ export const fetchingDataFaild = (err) => ({
 
 export const bookRocket = (id) => ({
   type: ROCKET_BOOKED,
+  payload: id,
+});
+
+export const cancelRokcet = (id) => ({
+  type: CANCEL_BOOKED,
   payload: id,
 });
 
@@ -54,10 +59,18 @@ export const rocketsRudcer = (state = initState, action) => {
         if (rocket.id !== action.payload) { return rocket; }
         return { ...rocket, reserved: true };
       });
-
       return {
         ...state,
         rockets: newState,
+      };
+    case CANCEL_BOOKED:
+      const newData = state.rockets.map((rocket) => {
+        if (rocket.id !== action.payload) { return rocket; }
+        return { ...rocket, reserved: false };
+      });
+      return {
+        ...state,
+        rockets: newData,
       };
     default:
       return state;
