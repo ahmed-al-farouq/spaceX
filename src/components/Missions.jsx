@@ -38,7 +38,8 @@ const Missions = () => {
               <td><p className="fw-bold">{name}</p></td>
               <td><p>{description}</p></td>
               <td className="align-middle">
-                <Badge bg="secondary">NOT A MEMBER</Badge>
+                {reserved && <Badge bg="info">Active Member</Badge>}
+                {!reserved && <Badge bg="secondary">NOT A MEMBER</Badge>}
               </td>
               <td className="col-2 align-middle text-center">
                 {reserved
