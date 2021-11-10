@@ -2,11 +2,11 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import {
-  fetchingDataFaild, fetchingDataSucceed, rocketsRudcer, startFetchingData,
+  fetchingDataFaild, fetchingDataSucceed, rocketsReducer, startFetchingData,
 } from './rockets/rockets';
 
 const reducer = combineReducers({
-  rocketsRudcer,
+  rocketsReducer,
 });
 
 const store = createStore(
