@@ -21,12 +21,11 @@ function Rocket({
         <p>
           {
           reserved
-            ? (
+            && (
               <span className="reserved">
                 Reserved
               </span>
             )
-            : ''
           }
           {description}
         </p>
