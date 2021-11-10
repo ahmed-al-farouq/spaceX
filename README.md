@@ -1,4 +1,4 @@
-# Seafood-Restaurant
+# Space Travelers' Hub
 
 > This website is space company.
 
@@ -41,6 +41,7 @@ which you can join
 :man::skin-tone-6: **Willy NTAZAMA**
 
 - GitHub: [@ntzwilly](https://github.com/ntzwilly)
+- LinkedIn: [@ntazamawilly](https://linkedin.com/in/ntazama-willy-b676b7aa)
 
 :bearded_person: **Ahmed Al-Farouq**
   - Github: [@Ahmed-Alfarouq](https://github.com/ahmed-al-farouq)
