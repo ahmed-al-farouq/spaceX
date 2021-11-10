@@ -20,7 +20,7 @@ const Missions = () => {
   const handleLeave = (id) => dispatch(leaveMission(id));
 
   return (
-    <Container>
+    <Container style={{ overflowX: 'auto' }}>
       <Table striped bordered hover>
         <thead>
           <tr>
