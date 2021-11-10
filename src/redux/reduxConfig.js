@@ -4,9 +4,11 @@ import logger from 'redux-logger';
 import {
   fetchingDataFaild, fetchingDataSucceed, rocketsReducer, startFetchingData,
 } from './rockets/rockets';
+import missionsReducer from './missions/missions';
 
 const reducer = combineReducers({
   rocketsReducer,
+  missions: missionsReducer,
 });
 
 const store = createStore(
