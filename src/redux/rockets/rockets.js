@@ -35,7 +35,7 @@ export const cancelRokcet = (id) => ({
   payload: id,
 });
 
-export const rocketsRudcer = (state = initState, action) => {
+export const rocketsReducer = (state = initState, action) => {
   switch (action.type) {
     case START_FETCHING_DATA:
       return {
