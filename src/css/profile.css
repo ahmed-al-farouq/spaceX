@@ -3,6 +3,9 @@
   margin: 0 auto;
   padding: 0 5px;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
 }
 
 .profile .reserved-rockets h2 {
@@ -27,7 +30,7 @@
 .profile .reserved-rockets ul li {
   padding: 20px;
   font-weight: 500;
-  border: 1px solid #18a4b9;
+  border: 1px solid #d1dadb;
   border-top: 0;
   font-size: 18px;
   font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
