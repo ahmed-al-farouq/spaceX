@@ -4,7 +4,7 @@ import { fetchMissions } from '../redux/missions/missions';
 
 function Profile() {
   const dispatch = useDispatch();
-  const missions = useSelector((state) => state.missions);
+  const missions = useSelector((state) => state.missions.missions);
   useEffect(() => {
     if (!missions.length) {
       dispatch(fetchMissions);

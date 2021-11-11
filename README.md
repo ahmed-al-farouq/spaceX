@@ -38,7 +38,7 @@ which you can join
 
 ## Authors
 
-:man::skin-tone-6: **Willy NTAZAMA**
+👨🏿: **Willy NTAZAMA**
 
 - GitHub: [@ntzwilly](https://github.com/ntzwilly)
 - LinkedIn: [@ntazamawilly](https://linkedin.com/in/ntazama-willy-b676b7aa)
