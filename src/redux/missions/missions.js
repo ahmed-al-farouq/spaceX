@@ -45,7 +45,8 @@ export const fetchMissions = async (dispatch) => {
       ),
     );
   } catch (err) {
-    dispatch(fetchingDataFailed([err]));
+    err.description = 'An error occurred, please try again later';
+    dispatch(fetchingDataFailed(err.description));
   }
 };
 
