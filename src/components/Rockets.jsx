@@ -4,6 +4,7 @@ import Rocket from './rocketsPage/Rocket';
 
 function Rockets() {
   const rockets = useSelector((state) => state.rocketsReducer.rockets);
+  const err = useSelector((state) => state.rocketsReducer.error);
   const rokcetsList = [];
   const displayRockets = () => {
     rockets.forEach((rocket) => {
@@ -26,7 +27,9 @@ function Rockets() {
   return (
     <section className="rockets">
       {
-        rokcetsList
+        err === ''
+          ? rokcetsList
+          : err
       }
     </section>
   );

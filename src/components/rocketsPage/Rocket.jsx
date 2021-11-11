@@ -15,10 +15,10 @@ function Rocket({
   };
   return (
     <div className="rocket">
-      <img src={image} alt={name} />
+      <img src={image} alt={name} data-testid="img" />
       <div className="content">
-        <h2>{name}</h2>
-        <p>
+        <h2 data-testid="name">{name}</h2>
+        <p data-testid="description">
           {
           reserved
             && (
