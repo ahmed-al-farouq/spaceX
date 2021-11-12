@@ -1,0 +1,48 @@
+.profile {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 5px;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+}
+
+.profile .reserved-rockets h2 {
+  font-weight: 500;
+}
+
+.profile .none-reserved {
+  font-weight: 500;
+  background: #18a4b9;
+  padding: 16px;
+  font-size: 22px;
+  color: #fff;
+  border-radius: 5px;
+  margin: 0 10px 0 0;
+}
+
+.profile .reserved-rockets ul {
+  list-style: none;
+  padding: 0;
+}
+
+.profile .reserved-rockets ul li {
+  padding: 20px;
+  font-weight: 500;
+  border: 1px solid #d1dadb;
+  border-top: 0;
+  font-size: 18px;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.profile .reserved-rockets ul li:first-child {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top: 1px solid #18a4b9;
+}
+
+.profile .reserved-rockets ul li:last-child {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}

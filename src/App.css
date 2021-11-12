@@ -1,0 +1,145 @@
+@import url('./css/rockets.css');
+@import url('./css/profile.css');
+
+.App {
+  text-align: center;
+}
+
+.d-none {
+  display: none;
+}
+
+/* Start Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #0000008c;
+  width: 90%;
+  margin: 0 auto 20px auto;
+  padding: 15px 5px;
+}
+
+header .left-section {
+  display: flex;
+  align-items: center;
+}
+
+header .left-section .logo {
+  width: 80px;
+  margin-right: 20px;
+}
+
+header .left-section h2 {
+  font-size: 40px;
+}
+
+header .menu-icon,
+header .close-icon {
+  display: none;
+}
+
+nav {
+  width: 40%;
+  margin-top: 15px;
+  transition: 0.5s;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+}
+
+nav ul li {
+  margin-right: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #007bff;
+}
+
+nav ul li a.active {
+  text-decoration: underline;
+  color: #0f60b8;
+}
+
+nav ul li:nth-child(3) {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li:nth-child(3)::before {
+  content: "";
+  display: inline-block;
+  border: 1px solid #ada3a3;
+  height: 16px;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 991px) {
+  header {
+    position: relative;
+  }
+
+  header .left-section .logo {
+    margin-right: 5px;
+  }
+
+  header .menu-icon,
+  header .close-icon {
+    display: block;
+    font-size: 35px;
+    color: #007bff;
+    margin-bottom: 15px;
+  }
+
+  nav {
+    width: 100%;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    left: 0;
+    background-color: #fff;
+    height: 0;
+    overflow: hidden;
+  }
+
+  nav.open {
+    height: 210px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin-top: 30px;
+  }
+
+  nav ul li:nth-child(3) {
+    flex-direction: column;
+  }
+
+  nav ul li:nth-child(3)::before {
+    display: block;
+    height: 0;
+    width: 78px;
+    margin-bottom: 15px;
+    margin-right: 0;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  header .left-section .logo {
+    width: 40px;
+  }
+
+  header .left-section h2 {
+    font-size: 24px;
+  }
+}
