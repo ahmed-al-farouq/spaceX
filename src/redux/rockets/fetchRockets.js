@@ -10,12 +10,12 @@ const getRockets = () => async (dispatch) => {
         selectedData.push({
           id: rocket.id,
           name: rocket.rocket_name,
-          type: rocket.rocket_type,
           img: rocket.flickr_images,
           desc: rocket.description,
         });
       });
       dispatch(fetchingDataSucceed(selectedData));
+      return selectedData;
     })
     .catch((err) => dispatch(fetchingDataFaild(err)));
 };
