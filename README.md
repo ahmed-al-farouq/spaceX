@@ -17,7 +17,7 @@ which you can join
 
 ## Live Demo
 
-[Live Demo](https://friendly-banach-a630ae.netlify.app/)
+[Live Demo](https://spacex-31b.pages.dev/)
 
 
   #### Knowledge of these technologies
